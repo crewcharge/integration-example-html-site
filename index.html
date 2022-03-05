@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html style="height:100%;width:100%;background: lightgray" lang="html">
 <body>
-<script defer src="https://app.crewcharge.com/v1/logger.js"></script>
+
+<script defer src="http://localhost:3000/v1/logger.js"></script>
+
+<script>
+    window.analytics_tag = "YourProjectKey_your_analytics_tag" //Get this from your Crewcharge console.
+    window.document.getElementById("login").addEventListener("click", () => {
+        const user_id = 23
+        const user_id_hashed = "boooab2132332"//actually do SHA3 or some one-way hash here. #GDPR
+        window.uid_hashed = `YourProjectKey_${user_id_hashed}`
+    })
+</script>
 
 <h1 style="font-size: xxx-large">The next unicorn on Shark Tank 🦄</h1>
 
-<button style="font-size: xx-large" type="button" data-trigger="Crew-dev_example">Magic 🔮!</button>
+<button style="font-size: xx-large" type="button" id="login">Login as User id 23!</button>
+
+<button style="font-size: xx-large" type="button" data-trigger="YourProjectKey_onboarding_complete">Track my trigger `Onboarding Complete` 🔮!</button>
 
 </body>
 </html>
